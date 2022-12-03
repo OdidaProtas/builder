@@ -52,6 +52,15 @@ export default async function handler(
       exact: true,
       path: "/dashboard",
     },
+    {
+      page: {
+        name: "404",
+        layout: "grid",
+        components: [{ type: "" }],
+      },
+      exact: true,
+      path: "*",
+    },
   ];
   res.status(200).json(pages);
 }
