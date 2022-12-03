@@ -50,7 +50,7 @@ export default async function handler(
         components: [{ type: "" }, { type: "" }, { type: "" }],
       },
       exact: true,
-      path: "/",
+      path: "/dashboard",
     },
   ];
   res.status(200).json(pages);
