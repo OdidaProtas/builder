@@ -58,7 +58,7 @@ export default async function handler(
         layout: "grid",
         components: [{ type: "" }],
       },
-      exact: true,
+      exact: false,
       path: "*",
     },
   ];
