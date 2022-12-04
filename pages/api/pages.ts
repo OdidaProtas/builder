@@ -46,7 +46,7 @@ export default async function handler(
     {
       page: {
         name: "Dashboard",
-        layout: "container",
+        layout: "dashboard",
         components: [{ type: "" }, { type: "" }, { type: "" }],
       },
       exact: true,
@@ -55,7 +55,7 @@ export default async function handler(
     {
       page: {
         name: "404",
-        layout: "grid",
+        layout: "full_screen_alert",
         components: [{ type: "" }],
       },
       exact: false,
