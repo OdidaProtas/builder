@@ -2,7 +2,6 @@
   "name": "builder",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -16,9 +15,11 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.10.16",
+    "@prisma/client": "^4.7.1",
     "@types/node": "18.11.10",
     "@types/react": "18.0.26",
     "@types/react-dom": "18.0.9",
+    "axios": "^1.2.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "eslint": "8.29.0",
@@ -33,6 +34,7 @@
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
+    "prisma": "^4.7.1",
     "ts-node": "^10.9.1"
   }
 }

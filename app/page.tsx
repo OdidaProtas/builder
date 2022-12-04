@@ -1,25 +1,25 @@
 import Head from "next/head";
+import Image from "next/image";
+import AppList from "../components/applist";
 import styles from "../styles/Home.module.css";
 
-import { PrismaClient } from "../node_modules/.prisma/client";
-import { trycatch } from "../util/trycatch";
-import AppList from "../components/applist";
-
-export async function getServerSideProps(context: any) {
-  return {
-    props: {
-      apps: await getData(),
-    },
-  };
-}
-
 async function getData() {
-  const prisma = new PrismaClient();
-  const [apps = [], error] = await trycatch(prisma.app.findMany());
-  return apps;
+  const res = await fetch("/api/apps");
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+
+  // Recommendation: handle errors
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
 }
 
-export default function Home({ apps }: any) {
+export default async function Home() {
+  const data = await getData();
+
   return (
     <div className={styles.container}>
       <Head>
@@ -29,7 +29,7 @@ export default function Home({ apps }: any) {
       </Head>
 
       <main className={styles.main}>
-        <AppList data={apps} />
+        <AppList data={data} />
       </main>
 
       <footer className={styles.footer}>

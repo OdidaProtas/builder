@@ -17,6 +17,6 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "db/entity/app/index.cgts", "db/entity/app/index.ts"],
   "exclude": ["node_modules"]
 }
